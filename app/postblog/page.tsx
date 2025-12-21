@@ -11,7 +11,7 @@ async function getPosts() {
 export default async function PostPage() {
     const posts = await getPosts();
     return(
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {posts.map((post)=>(
                 <Link key={post.id} href={`/postblog/blog/${post.id}`}>
                 <PostCard
