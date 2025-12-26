@@ -1,4 +1,4 @@
-import PostCard from "@/app/components/postcard/PostCard";
+import PostCard from "@/components/postcard/PostCard";
 
 async function fetchDetailPost(id:string) {
     const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL;

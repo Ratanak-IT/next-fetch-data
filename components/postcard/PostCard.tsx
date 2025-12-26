@@ -1,4 +1,4 @@
-import { PostResponse } from "@/app/lib/posts";
+import { PostResponse } from "@/lib/types/posts";
 
 export default async function PostCard({ 
     userId=0, 

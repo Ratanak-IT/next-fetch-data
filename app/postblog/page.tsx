@@ -1,28 +1,29 @@
-
+import Cards from "@/components/postcard/Cards";
+import { fetchPosts } from "@/lib/data/fetchPosts";
 import Link from "next/link";
-import PostCard from "../components/postcard/PostCard";
-import { PostResponse } from "../lib/posts";
-async function getPosts() {
-    const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL;
-    const data=await fetch(`${BASE_API_URL}posts`);
-    const posts:PostResponse[]=await data.json();
-    return posts;
-}
+
+
+
+
 export default async function PostPage() {
-    const posts = await getPosts();
+    //received data
+    const posts = await fetchPosts();
     return(
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {posts.map((post)=>(
-                <Link key={post.id} href={`/postblog/blog/${post.id}`}>
-                <PostCard
-                key={post.id}
+    
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+           {posts.map((post,index)=>(
+            <Link 
+            key={index}
+            href={`/postblog/blog/${post.id}`}>
+                <Cards
+                key={index}
                 userId={post.userId}
                 id={post.id}
                 title={post.title}
                 body={post.body}
                 />
             </Link>
-            ))}
+           ))}
         </div>
     )
 }
