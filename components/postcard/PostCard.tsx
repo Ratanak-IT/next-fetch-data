@@ -10,7 +10,6 @@ export default async function PostCard({
       <div  className="block rounded-md border border-gray-300 p-4 shadow-sm sm:p-6">
   <div className="sm:flex sm:justify-between sm:gap-4 lg:gap-6">
    
-        
     <div className="mt-4 sm:mt-0">
       <h3 className="line-clamp-1 text-lg font-medium text-pretty text-gray-900">
         {title}

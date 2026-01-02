@@ -5,14 +5,12 @@ import { use } from "react";
 import PostCard from "./postcard/PostCard";
 
 export function CardClientList(
-    {fetchPosts}: {fetchPosts: Promise<PostResponse[]>}
+    {fetchPosts}:{fetchPosts: Promise<PostResponse[]>}
 ){
-    //use hook
     const posts= use(fetchPosts)
     console.log(posts)
     return(
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 gap-4">
-
     {posts.map((post,index)=>(
                 <Link key={post.id} href={`/postblog/blog/${post.id}`}>
                 <PostCard
