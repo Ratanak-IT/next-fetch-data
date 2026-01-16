@@ -67,7 +67,7 @@ export default function RegisterForm() {
           Enter your email and password to register
         </CardDescription>
         <CardAction>
-          <Button variant="link">Login</Button>
+          <Button variant="link">Register</Button>
         </CardAction>
       </CardHeader>
 

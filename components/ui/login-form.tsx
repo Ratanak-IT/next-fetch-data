@@ -50,7 +50,7 @@ export default function Login() {
           </CardDescription>
 
           <CardAction>
-            <Button variant="link">Sign Up</Button>
+            <Button variant="link">Login</Button>
           </CardAction>
         </CardHeader>
 
