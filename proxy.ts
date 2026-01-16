@@ -1,16 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
-
-export default function proxy(request: NextRequest){
-    // is logined, if you are not login,redirect to /login
-    console.log('....... proxy -------')
-    console.log('request url : ',request.url)
-    console.log('request pathname : ', request.nextUrl.pathname)
-    const isLogin=false;
-    if(!isLogin){
-        return NextResponse.redirect(new URL('/auth/login',request.url))
-    }
-    return NextResponse.next();
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+export function proxy(request: NextRequest) {
+  const response = NextResponse.next()
+  response.headers.set('X-App-Version', '1.0')
+  response.headers.set('X-Powered-By', 'Next.js Proxy')
+  return response
 }
 export const config = {
-  matcher: '/postblog/:path*',
+  matcher: '/about',
 }

@@ -12,7 +12,7 @@ export function CardClientList(
     return(
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 gap-4">
     {posts.map((post,index)=>(
-                <Link key={post.id} href={`/postblog/blog/${post.id}`}>
+                <Link key={index} href={`/postblog/blog/${post.id}`}>
                 <PostCard
                 key={index}
                 userId={post.userId}
