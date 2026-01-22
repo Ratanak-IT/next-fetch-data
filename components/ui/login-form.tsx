@@ -65,7 +65,7 @@ export default function Login() {
                   type="email"
                   placeholder="m@example.com"
                   
-                  {...register("email")}
+                  {...register("email")} // ... copy
                 />
                 <p className="text-red-500">{errors.email?.message}</p>
               </div>

@@ -6,7 +6,7 @@ export default function PostBlogLayout({
 ){
     return(
        
-      <section className="bg-red-100">
+      <section className="">
         {children}
       </section>
     )
