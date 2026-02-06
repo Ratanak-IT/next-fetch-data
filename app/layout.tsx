@@ -3,6 +3,7 @@ import { Inter ,Moulpali } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 import LoadingCard from "@/components/loading/LoadingCard";
+import { Toaster } from "sonner";
 
 const moulpali = Moulpali({
   weight:"400",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Suspense fallback={<LoadingCard/>}>
         {children}
+        <Toaster richColors position="top-right"/>
         </Suspense>
       </body>
     </html>

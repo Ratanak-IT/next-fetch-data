@@ -1,6 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////
-// 🛑 Nothing in here has anything to do with Nextjs, it's just a fake database
-////////////////////////////////////////////////////////////////////////////////
+
 
 import { faker } from '@faker-js/faker';
 import { matchSorter } from 'match-sorter'; // For filtering
@@ -16,7 +14,7 @@ export type Product = {
   created_at: string;
   price: number;
   id: number;
-  category: string;
+  categoryId: string;
   updated_at: string;
 };
 
@@ -48,7 +46,7 @@ export const fakeProducts = {
           .toISOString(),
         price: parseFloat(faker.commerce.price({ min: 5, max: 500, dec: 2 })),
         photo_url: `https://api.slingacademy.com/public/sample-products/${id}.png`,
-        category: faker.helpers.arrayElement(categories),
+        categoryId: faker.helpers.arrayElement(categories),
         updated_at: faker.date.recent().toISOString()
       };
     }
@@ -74,7 +72,7 @@ export const fakeProducts = {
     // Filter products based on selected categories
     if (categories.length > 0) {
       products = products.filter((product) =>
-        categories.includes(product.category)
+        categories.includes(product.categoryId)
       );
     }
 
